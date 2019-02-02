@@ -18,7 +18,7 @@
 
       <img
         id="coffee-image"
-        alt="make this image work with js"
+        src = "static/coffee_beans.jpg"
         height="300"
         width="200">
 
@@ -55,8 +55,30 @@
 
     // Set these variables to their DOM elements
 
-    const coffeeImage;
-    const revenueMessage;
+    const coffeeImage = document.querySelector('#coffee-image');
+    const revenueMessage = document.querySelector('#revenue');
+    
+    
+    function coffeeBeans() {
+      coffeeImage.setAttribute('src', 'static/coffee_beans.jpg');
+    }  
+
+    function makeCoffee() {
+       coffeeImage.setAttribute('src', 'static/coffee_mug.jpg');
+    }
+
+    function coffeeMachine() {
+       coffeeImage.setAttribute('src', 'static/coffee_machine.jpg');
+    }
+
+    coffeeImage.addEventListener('click', coffeePlan);
+
+    function coffeePlan(evt) {
+      setTimeout(coffeeMachine, 1500);
+      setTimeout(makeCoffee, 2500);
+      coffeeBeans();
+    }
+
 
     // use this JavaScript object in further study step
 
